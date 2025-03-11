@@ -1,0 +1,89 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'projects_backend SAM Template for projects_backend
+
+  '
+Globals:
+  Api:
+    Cors:
+      AllowMethods: '''GET,OPTIONS'''
+      AllowHeaders: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+      AllowOrigin: '''*'''
+Resources:
+  LambdaApplicationRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+      - PolicyName: DynamoDBAccessPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:BatchGetItem
+            - dynamodb:BatchWriteItem
+            Resource:
+            - Fn::GetAtt:
+              - ProjectsTable
+              - Arn
+            - Fn::Sub: ${ProjectsTable.Arn}/index/*
+  GetProjectsLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: GetProjectsLambda
+      Handler: getProjects.lambda_handler
+      Runtime: python3.10
+      Role:
+        Fn::GetAtt:
+        - LambdaApplicationRole
+        - Arn
+      Architectures:
+      - x86_64
+      Events:
+        GetProjects:
+          Type: Api
+          Properties:
+            Path: /projects
+            Method: get
+    Metadata:
+      SamResourceId: GetProjectsLambda
+  ProjectsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ProjectsTable
+      AttributeDefinitions:
+      - AttributeName: project_id
+        AttributeType: S
+      KeySchema:
+      - AttributeName: project_id
+        KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      Tags:
+      - Key: Purpose
+        Value: Portfolio
+Outputs:
+  GetProjectsApi:
+    Description: API Gateway endpoint URL for Prod stage for getProjects function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/projects/
