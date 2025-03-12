@@ -17,7 +17,10 @@ jobs:
           node-version: '16' # or whatever version you need
 
       - name: Install dependencies
-        run: npm install
+        working-directory: ./website
+        run: |
+          npm install
+          npm list @vitejs/plugin-react
 
       - name: Build
         working-directory: ./website
