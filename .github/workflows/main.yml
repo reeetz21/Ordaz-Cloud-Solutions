@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync website/dist/ s3://ordazsolutions.com/ --delete
+          aws s3 sync website/dist/ s3://www.ordazsolutions.com/ --delete
