@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const links = [
     { name: 'Certifications', href: '/certifications' },
     { name: 'Projects', href: '/projects' },
@@ -56,10 +58,11 @@ const links = [
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
               {links.map((link) => (
-                <a key={link.name} href={link.href}>
+                <Link key={link.name} to={link.href}>
                   {link.name} <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               ))}
+
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat) => (

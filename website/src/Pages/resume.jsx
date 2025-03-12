@@ -21,6 +21,15 @@ export function Resume() {
             LinkedIn
           </a>
           <a 
+            href="https://github.com/reeetz21" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-800 hover:text-gray-600 flex items-center gap-1"
+          >
+            <FaGithub className="text-xl" />
+            GitHub
+          </a>
+          <a 
             href="mailto:ritaordaz75@gmail.com"
             className="text-blue-800 hover:text-gray-800 flex items-center gap-1"
           >
@@ -43,40 +52,44 @@ export function Resume() {
         </button>
       </header>
 
-      {/* Career Objective */}
+      {/* Projects */}
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-3 border-b-2 border-gray-200 pb-2">
-          Career Objective
+          Projects
         </h2>
-        <p className="text-gray-700 leading-relaxed">
-          I am a lifelong learner with a passion for critical thinking, problem-solving, and teaching. 
-          As I transition into the AWS Cloud space, I aim to leverage my analytical mindset and technical 
-          expertise to help businesses build scalable, cost-efficient, and high-performing cloud applications.
-        </p>
+        <h3 className="font-bold">Ordaz Solutions Portfolio Website</h3>
+        <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <li>Developed a static website using React (Vite), Tailwind CSS, and Node.js.</li>
+          <li>Deployed on Amazon S3 with a CloudFront distribution for performance and security.</li>
+          <li>Configured a custom domain via Route53 with an SSL certificate from AWS Certificate Manager.</li>
+          <li>Implemented CI/CD automation using GitHub Actions for updates.</li>
+        </ul>
+        <br/>
+        <h3 className="font-bold">Serverless Microservices with AWS SAM for Pet Website</h3>
+        <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <li>Built a React frontend with images stored on Amazon S3.</li>
+          <li>Developed a serverless backend using API Gateway, AWS Lambda, and Amazon DynamoDB.</li>
+          <li>Automated reporting workflows with AWS Step Functions, Lambda and SNS.</li>
+          <li>Monitored application performance using Amazon CloudWatch Logs.</li>
+          <li>Automated deployments using AWS SAM CLI.</li>
+        </ul>
       </section>
 
       {/* Skills & Expertise */}
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-3 border-b-2 border-gray-200 pb-2">
-          Skills & Expertise
+          Technical Skills
         </h2>
         <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold mb-2">Technical Skills</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li><span className="font-medium">DevOps:</span> CI/CD pipelines, Infrastructure as Code, CloudFormation, CodePipeline, CodeBuild</li>
-              <li><span className="font-medium">Monitoring & Automation:</span> CloudWatch, CloudTrail, Amazon SQS, Amazon SNS</li>
-              <li><span className="font-medium">Programming, Scripting, and Version Control:</span> Python, YAML, HTML, CSS, JavaScript, JSON, Linux Bash, GitHub</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Professional Skills</h3>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>Customer Obsession</li>
-              <li>Training & Development</li>
-              <li>Process Optimization</li>
-            </ul>
-          </div>
+        <div>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li><span className="font-bold">DevOps:</span> CI/CD pipelines, Infrastructure as Code, CloudFormation, CodePipeline, CodeBuild</li>
+            <li><span className="font-bold">Frameworks:</span> React, Vite with React, Django</li>
+            <li><span className="font-bold">Serverless:</span> Lambda, DynamoDB, API Gateway, SAM</li>
+            <li><span className="font-bold">Monitoring & Automation:</span> CloudWatch, CloudTrail, Amazon SQS, Amazon SNS, Amazon Bedrock</li>
+            <li><span className="font-bold">Programming, Scripting, and Version Control:</span> Python, YAML, JSON, HTML, CSS, JavaScript, GitHub</li>
+          </ul>
+        </div>
         </div>
       </section>
 

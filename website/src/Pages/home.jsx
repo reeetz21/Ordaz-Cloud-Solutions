@@ -1,4 +1,3 @@
-import { Feature } from '../Components/Feature'
 import { Header } from '../Components/Header'
 
 
