@@ -7,7 +7,7 @@ export function Certifications() {
       title: "AWS Certified Cloud Practitioner",
       issueDate: "2024-04-15", // Update with your actual date
       credlyLink: "https://www.credly.com/badges/f5b29d65-67fb-408e-98b8-2ab0d2aa7540/public_url",
-      image: "/public/images/aws-certified-cloud-practitioner.png", // Update with your actual image path
+      image: "/images/aws-certified-cloud-practitioner.png", // Update with your actual image path
       // description: "Validates overall understanding of the AWS Cloud"
     },
     {
@@ -15,7 +15,7 @@ export function Certifications() {
       title: "AWS Certified Developer - Associate",
       issueDate: "2025-03-07", // Update with your actual date
       credlyLink: "https://www.credly.com/badges/900bd18d-2e08-4261-9e26-0f029be7676f/public_url",
-      image: "/public/images/aws-certified-developer-associate.png", // Update with your actual image path
+      image: "/images/aws-certified-developer-associate.png", // Update with your actual image path
       // description: "Validates ability to develop applications on AWS"
     }
   ];
