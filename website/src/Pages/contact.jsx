@@ -10,7 +10,7 @@ export function Contact() {
                 
                 <div className="space-y-6">
                     <a
-                        href="www.linkedin.com/in/ordaz-rita"
+                        href="https://www.linkedin.com/in/ordaz-rita"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-3 p-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
