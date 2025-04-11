@@ -35,7 +35,7 @@ export function AboutMe() {
             {words[currentWord]}
           </span>
         </p>
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-1 lg:grid-cols-2 lg:grid-rows-2">
             <div className="relative max-lg:row-start-1">
             <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
@@ -43,9 +43,8 @@ export function AboutMe() {
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Professional Development</p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                 As I continue my journey in cloud computing, I have started my Master’s at the University of Maryland Global Campus, 
-                where I’m excited to deepen my knowledge of networking and cloud systems. In addition, I’ve signed up for the Google 
-                Cybersecurity Certification because I believe prevention is key! I’m also preparing to earn my Salesforce Administrator 
-                Certification to expand my expertise in cloud-based customer relationship management.
+                where I’m excited to deepen my knowledge of networking and cloud systems. In addition, I’ve am studying for the AWS Certified
+                AI Practitioner certification. 
                 </p>
                 <br />
               </div>

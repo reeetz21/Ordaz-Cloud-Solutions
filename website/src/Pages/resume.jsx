@@ -42,7 +42,7 @@ export function Resume() {
         <button 
           className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 
                      transition-colors duration-200 flex items-center gap-2 mx-auto"
-          onClick={() => window.open("/Rita_Ordaz_Resume.pdf", "_blank")}
+          onClick={() => window.open("/R.Ordaz_Resume.pdf", "_blank")}
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
@@ -101,7 +101,7 @@ export function Resume() {
         </h2>
         <ul className="space-y-3 text-gray-700">
           <li>
-            <span className="font-semibold">Master of Science, Cloud Computing Systems</span>
+            <span className="font-semibold">Master of Science, Cyber Operations</span>
             <br />
             <span className="italic">University of Maryland Global Campus (Expected June 2026)</span>
           </li>
